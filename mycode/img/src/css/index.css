@@ -1,0 +1,12 @@
+.div1 {
+  height: 200px;
+  background: url(../img/angular.jpg) no-repeat;
+}
+.div2 {
+  height: 200px;
+  background: url(../img/react.png) no-repeat;
+}
+.div3 {
+  height: 200px;
+  background: url(../img/vue.jpg) no-repeat;
+}
