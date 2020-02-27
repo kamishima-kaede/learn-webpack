@@ -9,26 +9,22 @@ module.exports = {
     filename: 'js/bulit.js',
     path: resolve(__dirname, 'build'),
   },
-  module: {
-    rules: [
-      // 语法检查 eslint-loader eslint
-      // 只检查源代码
-      // 设置检查规则 package.json中eslintConfig中设置,推荐airbnb
-      // airbnb --> eslint eslint-config-airbnb-base eslint-plugin-import
-      {
-        test: /\.js$/,
-        exclude: /node_modules/,
-        loader: 'eslint-loader',
-        options: {},
-      },
-    ],
-  },
   plugins: [
     new HtmlWebpackPlugin({
       template: './src/index.html',
+      // html压缩
+      minify:{
+        // 移除空格
+        collapseWhitespace:true,
+        // 移除注释
+        removeComments:true,
+      }
     }),
   ],
-  mode: 'development',
+
+  // 生产环境会自动压缩js代码
+  mode: 'production',
+
   devServer: {
     contentBase: resolve(__dirname, 'build'),
     // 启用gzip压缩
